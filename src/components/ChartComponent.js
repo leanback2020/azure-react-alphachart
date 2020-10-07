@@ -13,7 +13,7 @@ function ChartComponent() {
     console.log(appState)
     chart.padding(0, 15, 0, 15)
 
-    chart.dataSource.url = `https://cors-anywhere.herokuapp.com/https://query1.finance.yahoo.com/v7/finance/download/${appState.activeTicker}?period1=1570282261&period2=1601904661&interval=1d&events=history`
+    chart.dataSource.url = `https://cors-anywhere.herokuapp.com/https://query1.finance.yahoo.com/v7/finance/download/${appState.activeTicker}?period1=${parseInt(new Date().setFullYear(new Date().getFullYear() - 1) / 1000)}&period2=${parseInt((new Date().getTime() / 1000).toFixed(0))}&interval=1d&events=history`
     chart.dataSource.parser = new am4core.CSVParser()
     chart.dataSource.parser.options.useColumnNames = true
     chart.dataSource.parser.options.reverse = false
