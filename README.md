@@ -8,6 +8,8 @@
 
 ### Yahoo API is used for fetching financial data
 
+### This `react` project can be tested [here](https://purple-plant-037152703.azurestaticapps.net/)
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

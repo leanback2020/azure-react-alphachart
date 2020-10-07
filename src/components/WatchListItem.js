@@ -28,7 +28,7 @@ export const WatchListItem = ({ stock }) => {
           {ticker} {percent}% {last}
         </button>
       ) : (
-        <button style={btnStyleInNegative}>
+        <button style={btnStyleInNegative} onClick={(e) => handleClick(e.target.innerHTML.split(" ")[0])}>
           {ticker} {percent}% {last}
         </button>
       )}
