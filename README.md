@@ -1,3 +1,5 @@
+![Image of app](https://github.com/leanback2020/azure-react-alphachart/raw/main/src/images/app.PNG)
+
 ### This is a small react app, using Azure Static Web Site with GitHub Actions/workflow for CI/CD.
 
 ### The app is using a serverless backend with Azure Functions, to store data in a Mongo database.
