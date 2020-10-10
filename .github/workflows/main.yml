@@ -17,6 +17,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+        env:
+          url: https://dev-hg0m5gt3.eu.auth0.com/oauth/token
+          auth_url: https://dev-hg0m5gt3.eu.auth0.com/oauth/token
+          auth_audience: ${{ secrets.AUTH_AUDIENCE}}
+          auth_client_id: ${{ secrets.AUTH_CLIENT_ID}}
+          auth_client_secret: ${{ secrets.AUTH_CLIENT_SECRET}}
+          auth_username: ${{ secrets.AUTH_USERNAME}}
+          auth_password: ${{ secrets.AUTH_PASSWORD}}
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
