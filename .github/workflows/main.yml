@@ -6,9 +6,9 @@ name: End-to-end tests
 # events but only for the main branch
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,3 +24,9 @@ jobs:
           build: npm run build
           start: npm start
           wait-on: http://localhost:3000
+        env:
+          auth_url: ${{ secrets.auth_url}}
+          auth_client_id: ${{ secrets.auth_client_id}}
+          auth_client_secret: ${{ secrets.auth_client_secret}}
+          auth_username: ${{ secrets.auth_username}}
+          auth_password: ${{ secrets.auth_password}}
