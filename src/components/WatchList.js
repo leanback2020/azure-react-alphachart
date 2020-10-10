@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react"
-import TodoItem from "./WatchListItem"
+import WatchListItem from "./WatchListItem"
 import LoadingDotsIcon from "./LoadingDotsIcon"
 import { GlobalContext } from "../context/GlobalState"
 import { useAuth0 } from "@auth0/auth0-react"
@@ -20,5 +20,5 @@ export const WatchList = () => {
     myData = [...stocks].sort((a, b) => b.percent - a.percent) //Sort by percentage gain/loss
   }
 
-  return myData.map((stock) => <TodoItem key={stock.id} stock={stock} />)
+  return myData.map((stock) => <WatchListItem key={stock.id} stock={stock} />)
 }
