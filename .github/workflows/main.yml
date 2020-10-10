@@ -24,6 +24,7 @@ jobs:
           start: npm start
           # quote the url to be safe against YML parsing surprises
           wait-on: "http://localhost:3000"
+          env: true
         env:
           url: https://dev-hg0m5gt3.eu.auth0.com/oauth/token
           auth_url: https://dev-hg0m5gt3.eu.auth0.com/oauth/token
