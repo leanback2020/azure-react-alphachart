@@ -25,8 +25,8 @@ jobs:
           # quote the url to be safe against YML parsing surprises
           wait-on: "http://localhost:3000"
         env:
-          url: ${{ secrets.AUTH_URL}}
-          auth_url: ${{ secrets.AUTH_URL}}
+          url: https://dev-hg0m5gt3.eu.auth0.com/oauth/token
+          auth_url: https://dev-hg0m5gt3.eu.auth0.com/oauth/token
           auth_audience: ${{ secrets.AUTH_AUDIENCE}}
           auth_client_id: ${{ secrets.AUTH_CLIENT_ID}}
           auth_client_secret: ${{ secrets.AUTH_CLIENT_SECRET}}
