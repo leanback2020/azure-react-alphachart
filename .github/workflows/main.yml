@@ -25,9 +25,10 @@ jobs:
           # quote the url to be safe against YML parsing surprises
           wait-on: "http://localhost:3000"
         env:
-          url: ${{ secrets.auth_url}}
-          auth_url: ${{ secrets.auth_url}}
-          auth_client_id: ${{ secrets.auth_client_id}}
-          auth_client_secret: ${{ secrets.auth_client_secret}}
-          auth_username: ${{ secrets.auth_username}}
-          auth_password: ${{ secrets.auth_password}}
+          url: ${{ secrets.AUTH_URL}}
+          auth_url: ${{ secrets.AUTH_URL}}
+          auth_audience: ${{ secrets.AUTH_AUDIENCE}}
+          auth_client_id: ${{ secrets.AUTH_CLIENT_ID}}
+          auth_client_secret: ${{ secrets.AUTH_CLIENT_SECRET}}
+          auth_username: ${{ secrets.AUTH_USERNAME}}
+          auth_password: ${{ secrets.AUTH_PASSWORD}}
