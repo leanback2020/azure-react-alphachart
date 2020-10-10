@@ -17,16 +17,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v1
         with:
-          build: npm run build
-          start: npm start
-          wait-on: http://localhost:3000
-        env:
-          auth_url: ${{ secrets.auth_url}}
-          auth_client_id: ${{ secrets.auth_client_id}}
-          auth_client_secret: ${{ secrets.auth_client_secret}}
-          auth_username: ${{ secrets.auth_username}}
-          auth_password: ${{ secrets.auth_password}}
+          env:
+            auth_url: ${{ secrets.auth_url}}
+            auth_client_id: ${{ secrets.auth_client_id}}
+            auth_client_secret: ${{ secrets.auth_client_secret}}
+            auth_username: ${{ secrets.auth_username}}
+            auth_password: ${{ secrets.auth_password}}
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          env:
+            auth_url: ${{ secrets.auth_url}}
+            auth_client_id: ${{ secrets.auth_client_id}}
+            auth_client_secret: ${{ secrets.auth_client_secret}}
+            auth_username: ${{ secrets.auth_username}}
+            auth_password: ${{ secrets.auth_password}}

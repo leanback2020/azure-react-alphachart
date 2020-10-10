@@ -6,7 +6,7 @@ const LoginButton = () => {
 
   return (
     <div className="col-md-auto">
-      <button style={btnStyleLogin} onClick={() => loginWithRedirect()}>
+      <button data-cy style={btnStyleLogin} onClick={() => loginWithRedirect()}>
         Log In
       </button>
     </div>
