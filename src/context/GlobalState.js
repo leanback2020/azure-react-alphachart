@@ -10,6 +10,7 @@ const initialState = {
   loading: true,
   messages: [],
   domainid: "",
+  arima: "",
   activeTicker: "MSFT",
 }
 
@@ -52,6 +53,24 @@ export const GlobalProvider = ({ children }) => {
       })
     }
   }
+
+  async function getARIMAmodel(ticker) {
+    console.log("getARIMAmodel: " + ticker)
+    try {
+      const response = await axios.get(`https://algocalcfunc.azurewebsites.net/api/arima_function?ticker=${ticker}`)
+      console.log("Response: " + response.data)
+      dispatch({
+        type: "GET_ARIMA",
+        payload: response.data,
+      })
+    } catch (err) {
+      dispatch({
+        type: "TODOITEM_ERROR",
+        payload: err,
+      })
+    }
+  }
+  //https://algocalcfunc.azurewebsites.net/api/arima_function?ticker=DNO.OL
 
   async function getIndexData() {
     console.log("getIndexData: ")
@@ -103,8 +122,10 @@ export const GlobalProvider = ({ children }) => {
         loading: state.loading,
         messages: state.messages,
         domainid: state.domainid,
+        arima: state.arima,
         activeTicker: state.activeTicker,
         getIndexData,
+        getARIMAmodel,
         getWatchListByUserId,
         updateTicker,
         addWatchListItem,

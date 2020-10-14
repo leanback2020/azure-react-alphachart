@@ -14,10 +14,10 @@ function ChartComponent() {
     chart.padding(0, 15, 0, 15)
 
     chart.dataSource.url = `https://cors-anywhere.herokuapp.com/https://query1.finance.yahoo.com/v7/finance/download/${appState.activeTicker}?period1=${parseInt(new Date().setFullYear(new Date().getFullYear() - 1) / 1000)}&period2=${parseInt((new Date().getTime() / 1000).toFixed(0))}&interval=1d&events=history`
+    //https://algocalcfunc.azurewebsites.net/api/arima_function?ticker=DNO.OL
     chart.dataSource.parser = new am4core.CSVParser()
     chart.dataSource.parser.options.useColumnNames = true
     chart.dataSource.parser.options.reverse = false
-
     // the following line makes value axes to be arranged vertically.
     chart.leftAxesContainer.layout = "vertical"
 
@@ -63,6 +63,7 @@ function ChartComponent() {
     series.dataFields.lowValueY = "Low"
     series.dataFields.highValueY = "High"
     series.clustered = false
+    series.connect = false
     series.tooltipText = "open: {openValueY.value}\nlow: {lowValueY.value}\nhigh: {highValueY.value}\nclose: {valueY.value}"
     series.name = appState.activeTicker
 
@@ -101,7 +102,16 @@ function ChartComponent() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [appState.activeTicker])
 
-  return <div id="chartdiv" style={{ width: "100%", height: "550px" }}></div>
+  return (
+    <>
+      <div id="chartdiv" style={{ width: "100%", height: "550px" }}></div>
+      <div id="infoWrapper" style={{ display: "block" }}>
+        <div className="center infoBox">
+          <pre>{appState.arima}</pre>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default ChartComponent

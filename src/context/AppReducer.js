@@ -28,6 +28,14 @@ export default (state, action) => {
         loading: false,
         stocks: action.payload,
       }
+    case "GET_ARIMA":
+      console.log("AppReducer: GetArima")
+      console.log(action.payload)
+      return {
+        ...state,
+        loading: false,
+        arima: action.payload,
+      }
     case "GET_INDEXDATA":
       console.log("AppReducer: Get Index Data")
       console.log(action.payload)

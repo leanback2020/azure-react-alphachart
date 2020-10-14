@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { GlobalContext } from "../context/GlobalState"
 
 export const WatchListItem = ({ stock }) => {
-  const { activeTicker, updateTicker } = useContext(GlobalContext)
+  const { activeTicker, updateTicker, getARIMAmodel } = useContext(GlobalContext)
   function getStyleShort() {
     return {
       background: "#f4f4f4",
@@ -16,6 +16,7 @@ export const WatchListItem = ({ stock }) => {
   function handleClick(ticker) {
     console.log("handleClick before: " + activeTicker)
     updateTicker(ticker)
+    getARIMAmodel(ticker)
     console.log("handleClick after: " + activeTicker)
   }
 
