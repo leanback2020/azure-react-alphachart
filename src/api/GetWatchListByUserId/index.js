@@ -67,7 +67,7 @@ module.exports = async (context, req) => {
     symbols = symbols + stockData["ticker"] + ","
   })
 
-  const body = await GetTickerData(symbols.substring(0, symbols.length - 1))
+  const body = await symbols.substring(0, symbols.length - 1)
   connection.close()
   context.res = {
     status: 200,

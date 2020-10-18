@@ -36,6 +36,14 @@ export default (state, action) => {
         loading: false,
         arima: action.payload,
       }
+    case "GET_SHARPE":
+      console.log("AppReducer: GetSharpe")
+      console.log(action.payload)
+      return {
+        ...state,
+        calculating: false,
+        sharperatio: action.payload,
+      }
     case "GET_INDEXDATA":
       console.log("AppReducer: Get Index Data")
       console.log(action.payload)

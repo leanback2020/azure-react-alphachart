@@ -1,10 +1,12 @@
-![Image of app](https://github.com/leanback2020/azure-react-alphachart/raw/main/src/images/app.PNG)
+![Image of app](https://github.com/leanback2020/azure-react-alphachart/raw/main/src/images/app2.PNG)
 
 ### This is a small react app, using Azure Static Web Site with GitHub Actions/workflow for CI/CD.
 
-### The app is using a serverless backend with Azure Functions, to store data in a Mongo database.
+### The app is using a serverless backend with Azure Functions (javascript), to store data in a Mongo database.
 
 ### Auth0 is used for authentication
+
+### A python api (Azure Function) is used to calculate Portfolio Sharpe Ratio, and ARIMA for time series forecast
 
 ### Yahoo API is used for fetching financial data
 

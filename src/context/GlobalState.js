@@ -8,8 +8,10 @@ const initialState = {
   indicies: [],
   error: null,
   loading: true,
+  calculating: true,
   messages: [],
   domainid: "",
+  sharperatio: 0.0,
   arima: "",
   activeTicker: "MSFT",
 }
@@ -72,6 +74,24 @@ export const GlobalProvider = ({ children }) => {
   }
   //https://algocalcfunc.azurewebsites.net/api/arima_function?ticker=DNO.OL
 
+  //https://algocalcfunc.azurewebsites.net/api/SharpeRatio
+  async function getSharpeRatio(symbols) {
+    console.log("getSharpeRatio: " + symbols)
+    try {
+      const response = await axios.get(`https://algocalcfunc.azurewebsites.net/api/SharpeRatio?symbols=${symbols}`)
+      console.log("Response: " + response.data)
+      dispatch({
+        type: "GET_SHARPE",
+        payload: response.data,
+      })
+    } catch (err) {
+      dispatch({
+        type: "TODOITEM_ERROR",
+        payload: err,
+      })
+    }
+  }
+
   async function getIndexData() {
     console.log("getIndexData: ")
     try {
@@ -120,14 +140,17 @@ export const GlobalProvider = ({ children }) => {
         indicies: state.indicies,
         error: state.error,
         loading: state.loading,
+        calculating: state.calculating,
         messages: state.messages,
         domainid: state.domainid,
         arima: state.arima,
+        sharperatio: state.sharperatio,
         activeTicker: state.activeTicker,
         getIndexData,
         getARIMAmodel,
         getWatchListByUserId,
         updateTicker,
+        getSharpeRatio,
         addWatchListItem,
       }}
     >

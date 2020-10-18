@@ -26,7 +26,7 @@ function AddWatchListItem() {
   return (
     <form onSubmit={onSubmit} style={{ display: "flex", width: "310px" }}>
       <input type="text" value={text} onChange={(e) => setText(e.target.value)} style={{ flex: "10", padding: "5px" }} placeholder="Enter ticker..." />
-      <input id="Submit" data-cy="Submit" type="Submit" value="Submit" className="btn" style={{ flex: "1" }} />
+      <input id="Submit" data-cy="Submit" type="Submit" className="btn" style={{ flex: "1" }} />
     </form>
   )
 }

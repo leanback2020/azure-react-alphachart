@@ -43,7 +43,7 @@ const btnStyleInPostive = {
   color: "#fff",
   border: "none",
   padding: "5px 9px",
-  borderRadius: "20%",
+  borderRadius: "10%",
   cursor: "pointer",
   margin: "0px 10px",
 }
@@ -53,7 +53,7 @@ const btnStyleInNegative = {
   color: "#fff",
   border: "none",
   padding: "5px 9px",
-  borderRadius: "20%",
+  borderRadius: "10%",
   cursor: "pointer",
   margin: "0px 10px",
 }
